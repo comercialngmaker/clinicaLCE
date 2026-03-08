@@ -1,0 +1,16 @@
+---
+import siteData from "@/siteData";
+import WhatsAppIcon from "~icons/mdi/whatsapp";
+const whatsapp = siteData.whatsappUrl ?? "#";
+---
+
+<div class="fab">
+  <a
+    href={whatsapp}
+    rel="noopener noreferer"
+    target="_blank"
+    class="btn btn-lg btn-circle btn-success text-success-content hover:scale-105 tooltip tooltip-left"
+    data-tip="WhatsApp"
+    ><WhatsAppIcon class="text-xl" /></a
+  >
+</div>

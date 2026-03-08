@@ -1,0 +1,107 @@
+---
+import "../styles/global.css";
+import siteData from "@/siteData";
+import { Font } from "astro:assets";
+import { getValidUrl } from "@/utils/validators";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Fab from "@/components/Fab.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+}
+
+const basePath = import.meta.env.SITE;
+const realUrl = getValidUrl(Astro.url.pathname);
+
+const googleVerification = siteData.googleVerification;
+
+const {
+  title = siteData.name,
+  description = siteData.description,
+  image = siteData.defaultImage,
+  type = "website",
+} = Astro.props;
+---
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      href="/favicon.svg"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <title>{title ? `${title} | ${siteData.name}` : siteData.name}</title>
+    <meta
+      name="description"
+      content={description}
+    />
+    <meta
+      property="og:title"
+      content={title ? `${title} | ${siteData.name}` : siteData.name}
+    />
+    <meta
+      property="og:description"
+      content={description}
+    />
+    <meta
+      property="og:type"
+      content={type}
+    />
+    <meta
+      property="og:url"
+      content={realUrl}
+    />
+    <meta
+      name="twitter:title"
+      content={title ? `${title} | ${siteData.name}` : siteData.name}
+    />
+    <meta
+      name="twitter:description"
+      content={description}
+    />
+    <meta
+      property="og:image"
+      content={`${basePath}${image}`}
+    />
+    <meta
+      name="twitter:image"
+      content={`${basePath}${image}`}
+    />
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      name="google-site-verification"
+      content={googleVerification}
+    />
+    <link
+      rel="canonical"
+      href={realUrl}
+    />
+    <Font
+      cssVariable="--font-open-sans"
+      preload
+    />
+  </head>
+  <body class="font-sans bg-base-200">
+    <Header />
+    <main class="w-full px-4 md:max-w-9/12 mx-auto min-h-screen pt-16 pb-10">
+      <slot />
+    </main>
+    <Footer />
+    <Fab />
+  </body>
+</html>

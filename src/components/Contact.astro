@@ -1,0 +1,22 @@
+---
+import siteData from "@/siteData";
+const whatsapp = siteData.whatsappUrl ?? "#";
+---
+
+<section id="contact" class="py-24 bg-base-100 will-animate">
+  <div class="container mx-auto">
+    <div class="text-center mb-8 will-animate">
+      <h2 class="text-3xl font-bold">Fale conosco</h2>
+      <p class="mt-3 text-base-content/70">Estamos prontos para tirar suas dúvidas e agendar seu atendimento.</p>
+    </div>
+
+    <div class="flex flex-col items-center gap-4 will-animate">
+      <a href={whatsapp} rel="noopener noreferrer" target="_blank" class="btn btn-primary btn-lg">
+        Conversar pelo WhatsApp
+      </a>
+      <p class="text-sm text-base-content/70 max-w-md text-center">
+        Envie uma mensagem com o procedimento desejado e nossa equipe irá responder o mais rápido possível.
+      </p>
+    </div>
+  </div>
+</section>

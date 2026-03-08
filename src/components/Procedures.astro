@@ -1,0 +1,32 @@
+---
+import siteData from "@/siteData";
+import Card from "@/components/Card.astro";
+---
+
+<!-- TODO: Saiba mais redireciona pra whatsapp com titulo (Gostaria de mais informações) -->
+<section
+  id="procedures"
+  class="py-24 will-animate">
+  <div class="container mx-auto">
+    <div class="text-center mb-10 will-animate">
+      <h2 class="text-3xl font-bold">Conheça nossas especialidades</h2>
+      <p class="mt-3 text-base-content/70">
+        Procedimentos pensados para elevar sua autoestima com conforto e
+        segurança.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      {
+        siteData.procedures.map((procedure) => (
+          <Card
+            title={procedure.title}
+            image={procedure.image}
+            description={procedure.description}
+            link={"#"}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

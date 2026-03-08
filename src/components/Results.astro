@@ -1,0 +1,67 @@
+---
+import siteData from "@/siteData";
+---
+
+<section
+  id="gallery"
+  class="py-24 will-animate">
+  <div class="container mx-auto">
+    <div class="text-center mb-10 will-animate">
+      <h2 class="text-3xl font-bold">Nossos resultados</h2>
+      <p class="mt-3 text-base-content/70">
+        Veja alguns exemplos de antes e depois. Quer ver mais? Clique em "Ver
+        mais resultados".
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-4">
+      {
+        siteData.results.map((result) => (
+          <article class="rounded bg-base-100 shadow-lg will-animate">
+            <figure
+              class="diff aspect-square rounded-t-4xl"
+              tabindex="0">
+              <div
+                class="diff-item-1"
+                role="img"
+                tabindex="0">
+                <img
+                  src={result.before}
+                  alt={`Antes - ${result.title}`}
+                />
+              </div>
+              <div
+                class="diff-item-2"
+                role="img">
+                <img
+                  src={result.after}
+                  alt={`Depois - ${result.title}`}
+                />
+              </div>
+              <div class="diff-resizer" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">{result.title}</h3>
+              <p class="text-sm text-base-content/70">{result.sessions}</p>
+              <div class="card-actions justify-end">
+                <a
+                  href={siteData.whatsappUrl}
+                  class="btn btn-primary btn-sm">
+                  Agendar
+                </a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-10 text-center will-animate">
+      <a
+        href="#"
+        class="btn btn-ghost"
+        >Ver mais resultados</a
+      >
+    </div>
+  </div>
+</section>

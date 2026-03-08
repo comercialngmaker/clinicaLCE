@@ -1,0 +1,35 @@
+---
+import siteData from "@/siteData";
+import WhatsAppIcon from "~icons/mdi/whatsapp";
+import InstagramIcon from "~icons/mdi/instagram";
+const whatsapp = siteData.whatsappUrl ?? "#";
+const instagram = siteData.instagramUrl ?? "#";
+---
+
+<footer class="footer footer-horizontal footer-center bg-base-200 p-10">
+  <aside>
+    <img
+      src="/assets/logo.webp"
+      alt="Logo"
+      class="w-fit max-w-64 md:max-w-80"
+    />
+    <p>Copyright © {new Date().getFullYear()} - Todos os direitos reservados</p>
+    <p>Desenvolvido por <a href="https://lzart.com.br" class="underline" target="_blank" rel="noreferrer noopener">LZArt</a></p>
+  </aside>
+  <nav>
+    <div class="grid grid-flow-col gap-4">
+      <a
+        href={whatsapp}
+        target="_blank"
+        rel="noreferrer noopener">
+        <WhatsAppIcon class="text-2xl" />
+      </a>
+      <a
+        href={instagram}
+        target="_blank"
+        rel="noreferrer noopener">
+        <InstagramIcon class="text-2xl" />
+      </a>
+    </div>
+  </nav>
+</footer>

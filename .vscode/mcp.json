@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "Astro docs": {
+      "url": "https://mcp.docs.astro.build/mcp",
+      "type": "http"
+    },
+    "svelte": {
+      "url": "https://mcp.svelte.dev/mcp"
+    }
+  },
+  "inputs": []
+}

@@ -1,0 +1,35 @@
+---
+import siteData from "@/siteData";
+const whatsapp = siteData.whatsappUrl ?? "#";
+---
+
+<section class="hero bg-linear-to-br from-base-200 via-base-100 to-base-100">
+  <div class="hero-content flex-col lg:flex-row gap-10">
+    <div class="max-w-xl text-center lg:text-left will-animate">
+      <h1 class="text-4xl sm:text-5xl font-bold">{siteData.name}</h1>
+      <p class="py-6 text-base-content/80 text-pretty">
+        {siteData.description}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href={whatsapp}
+          class="btn btn-primary"
+          >Entrar em contato</a
+        >
+        <a
+          href="#procedures"
+          class="btn btn-ghost"
+          >Saiba mais</a
+        >
+      </div>
+    </div>
+
+    <div class="w-full max-w-md will-animate">
+      <img
+        src="/assets/hero.webp"
+        alt={`Hero image for ${siteData.name}`}
+        class="w-full rounded-xl shadow-lg"
+      />
+    </div>
+  </div>
+</section>
