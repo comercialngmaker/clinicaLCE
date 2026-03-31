@@ -1,0 +1,47 @@
+---
+import siteData from "@/siteData";
+
+interface Props {
+  title: string;
+  image: string;
+  description?: string;
+  link?: string;
+  imageOnly?: boolean;
+}
+
+const { title, image, description, link, imageOnly } = Astro.props;
+---
+
+<article class="card bg-base-100 shadow-lg will-animate">
+  <figure>
+    <img
+      src={image}
+      alt={title}
+      class="rounded-t-4xl object-cover"
+    />
+  </figure>
+  {
+    !imageOnly && (
+      <div class="card-body">
+        <h3 class="card-title">{title}</h3>
+        <p class="text-base-content/70 whitespace-pre-line">{description}</p>
+        <div class="card-actions justify-between mt-4">
+          <a
+            href={link}
+            target="_blank"
+            rel="noreferrer noopener"
+            class="btn btn-ghost btn-sm">
+            Saiba mais
+          </a>
+          <a
+            href={siteData.reservationLink}
+            target="_blank"
+            rel="noreferrer noopener"
+            class="btn btn-primary btn-sm">
+            Agendar
+          </a>
+        </div>
+      </div>
+    )
+  }
+</article>

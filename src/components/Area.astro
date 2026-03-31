@@ -1,0 +1,31 @@
+---
+import siteData from "@/siteData";
+import Card from "@/components/Card.astro";
+---
+
+<!-- TODO: Saiba mais redireciona pra whatsapp com titulo (Gostaria de mais informações) -->
+<section
+  id="area"
+  class="pt-24 will-animate">
+  <div class="container mx-auto">
+    <div class="text-center mb-10 will-animate">
+      <h2 class="text-3xl font-bold">Conheça nosso espaço</h2>
+      <p class="mt-3 text-base-content/70">
+        Um ambiente acolhedor e moderno, projetado para proporcionar conforto e segurança durante
+        seus procedimentos de beleza.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {
+        siteData.area.map((image, index) => (
+          <Card
+            title={`Nosso espaço - ${index + 1}`}
+            image={image}
+            imageOnly={true}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

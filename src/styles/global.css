@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme inline {
+  --font-sans: var(--font-open-sans);
+}
+
+@plugin "daisyui/theme" {
+  name: "silk";
+  default: true;
+  prefersdark: true;
+  color-scheme: "light";
+  --color-base-100: oklch(98% 0.002 247.839);
+  --color-base-200: oklch(97% 0.001 106.424);
+  --color-base-300: oklch(92% 0.003 48.717);
+  --color-base-content: #66584d;
+  --color-primary: #997964;
+  --color-primary-content: oklch(98% 0.014 180.72);
+  --color-secondary: #997964;
+  --color-secondary-content: oklch(98% 0.003 247.858);
+  --color-accent: #c07a60;
+  --color-accent-content: oklch(98% 0.016 73.684);
+  --color-neutral: #997964;
+  --color-neutral-content: #f7efed;
+  --color-info: #c07a60;
+  --color-info-content: oklch(97% 0.013 236.62);
+  --color-success: #c07a60;
+  --color-success-content: oklch(98% 0.031 120.757);
+  --color-warning: #ad7f5d;
+  --color-warning-content: oklch(98% 0.016 73.684);
+  --color-error: #c07a60;
+  --color-error-content: oklch(97% 0.014 343.198);
+  --radius-selector: 1rem;
+  --radius-field: 0.25rem;
+  --radius-box: 2rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 1;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+@layer utilities {
+  .rounded {
+    border-radius: var(--radius-box);
+  }
+
+  .will-animate {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+    will-change: opacity, transform;
+  }
+
+  .animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .will-animate,
+    .animated {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}

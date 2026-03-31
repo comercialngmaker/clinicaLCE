@@ -1,0 +1,68 @@
+---
+import siteData from "@/siteData";
+import ArrowRightIcon from "~icons/mdi/arrow-right-circle-outline";
+import MenuIcon from "~icons/mdi/menu";
+---
+
+<div class="bg-base-200 shadow-sm sticky top-0 z-50">
+  <nav class="navbar max-w-10/12 mx-auto">
+    <div class="navbar-start">
+      <a
+        href="#"
+        class="max-w-56"
+        ><img
+          src="/assets/logo.webp"
+          alt="Logo"
+          class="w-fit hover:scale-105 transition-all"
+        /></a
+      >
+    </div>
+
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-2">
+        <li><a href="#procedures">Procedimentos</a></li>
+        <li><a href="#gallery">Resultados</a></li>
+        <li><a href="#area">Nosso espaço</a></li>
+        <li><a href="#location">Onde estamos</a></li>
+        <li><a href="#contact">Fale conosco</a></li>
+      </ul>
+    </div>
+
+    <div class="navbar-end hidden lg:flex">
+      <a
+        href={siteData.reservationLink}
+        target="_blank"
+        rel="noreferrer noopener"
+        class="btn btn-primary"
+        >Agende seu horário <ArrowRightIcon class="text-lg" /></a
+      >
+    </div>
+
+    <div class="navbar-end lg:hidden">
+      <div class="dropdown dropdown-end">
+        <label
+          tabindex="0"
+          class="btn btn-ghost btn-circle">
+          <MenuIcon class="text-xl" />
+        </label>
+        <ul
+          tabindex="0"
+          class="menu menu-compact dropdown-content mt-3 p-4 shadow bg-base-100 rounded-xl w-56">
+          <li><a href="#procedures">Procedimentos</a></li>
+          <li><a href="#gallery">Resultados</a></li>
+          <li><a href="#location">Onde estamos</a></li>
+          <li><a href="#contact">Fale conosco</a></li>
+          <li class="mt-2">
+            <a
+              href={siteData.reservationLink}
+              target="_blank"
+              rel="noreferrer noopener"
+              class="btn btn-primary w-full"
+              >Agendar</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
